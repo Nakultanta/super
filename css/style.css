@@ -53,7 +53,7 @@ img {
 }
 
 .pagetransition div:nth-child(2) {
-    background: #000;
+    background: #00bcd4;
     animation-name: pagetransition;
     animation-duration: 1.4s;
     animation-timing-function: ease-in-out;
@@ -108,32 +108,36 @@ img {
     height: 50px;
     cursor: pointer;
     z-index: 3;
+    position: relative;
 }
 
-.menu svg path {
-    stroke: #333;
-    stroke-width: 10px;
+.menu div {
+    height: 6px;
+    width: 80%;
+    background: #333;
+    border-radius: 100px;
+    position: absolute;
     transition: all 0.2s cubic-bezier(0.96, -0.07, 0.22, 0.49);
 }
 
-.menu.open svg path {
-    stroke: #fff;
+.menu div:nth-child(1) {
+    top: 15px;
+    left: 10%;
 }
 
-.menu svg path.menuOne {
-    d: path("M 20 30 L 80 30");
+.menu div:nth-child(2) {
+    bottom: 15px;
+    left: 10%;
 }
 
-.menu svg path.menuTwo {
-    d: path("M 80 70 L 20 70");
+.menu.open div:nth-child(1) {
+    transform: rotate(-45deg) translate(-12%, 70%);
+    background: #fff;
 }
 
-.menu.open svg path.menuOne {
-    d: path("M 20 30 L 70 80");
-}
-
-.menu.open svg path.menuTwo {
-    d: path("M 70 30 L 20 80");
+.menu.open div:nth-child(2) {
+    transform: rotate(45deg) translate(-12%, -90%);
+    background: #fff;
 }
 
 
@@ -217,7 +221,7 @@ img {
     .navigation .navigationLeft {
         display: none;
     }
-    
+
     .navigation .navigationRight {
         width: 100%;
     }
@@ -253,17 +257,3 @@ img {
     font-size: 2.4em;
     margin: 20px 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
