@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    user-select: none;
+}
+
+body {
+    transform: translateZ(0);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-top: 60px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/cssfamily=Oswald&display=swap');
+
+
+.pagetransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.pagetransition div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation-delay: .5s;
+}
+
+.pagetransition div:nth-child(1) {
+    background: #00bcd4;
+    animation-name: pagetransition;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+}
+
+.pagetransition div:nth-child(2) {
+    background: #000;
+    animation-name: pagetransition;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+}
+
+.pagetransition div:nth-child(3) {
+    background: #000;
+    animation-name: pagetransition;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pagetransition {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Navigation*/
+
+.nav {
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+}
+
+.menu {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu svg path {
+    stroke: #333;
+    stroke-width: 10px;
+    transition: all 0.2s cubic-bezier(0.96, -0.07, 0.22, 0.49);
+}
+
+.menu.open svg path {
+    stroke: #fff;
+}
+
+.menu svg path.menuOne {
+    d: path("M 20 30 L 80 30");
+}
+
+.menu svg path.menuTwo {
+    d: path("M 80 70 L 20 70");
+}
+
+.menu.open svg path.menuOne {
+    d: path("M 20 30 L 70 80");
+}
+
+.menu.open svg path.menuTwo {
+    d: path("M 70 30 L 20 80");
+}
+
+
+
+
+
+.navigation {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in;
+    background: #0a0a0a;
+    position: fixed;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: right;
+    display: flex;
+}
+
+.navigation.open {
+    overflow-x: hidden;
+}
+
+.navigation .navigationLeft {
+    background-image: url(../images/navigationLeft.jpg);
+    height: 100%;
+    width: 60%;
+    background-size: cover;
+    background-position: bottom;
+    transition: all 0.2s linear;
+    transform: translateX(-10%);
+    opacity: 0;
+}
+
+.navigation .navigationRight {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.navigation .navigator {
+    padding: 10px 20px;
+    font-size: 3em;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: translateY(50px);
+    opacity: 0;
+    transform-origin: bottom;
+    transition: all 0.1s ease-in;
+}
+
+.navigation .navigator.active {
+    color: #00bcd4;
+    pointer-events: none;
+    font-weight: 100;
+}
+
+.navigation.open {
+    transform: scaleX(1);
+    border-radius: 0;
+}
+
+.navigation.open .navigationLeft {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navigation.open .navigationRight .navigator {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@media (max-width: 768px) {
+    .navigation .navigationLeft {
+        display: none;
+    }
+    
+    .navigation .navigationRight {
+        width: 100%;
+    }
+
+
+}
+
+
+.banner {
+    background-image: url(../images/navigationLeft.jpg);
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    font-size: 2.4em;
+    color: #fff;
+}
+
+.contain {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+}
+
+
+.sectionHead {
+    font-size: 2.4em;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
