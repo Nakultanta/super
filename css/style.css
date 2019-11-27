@@ -97,6 +97,7 @@ img {
     border-radius: 100px;
     box-shadow: 0 0 0 0 #000;
     transition: all 0.5s cubic-bezier(0.26, 0.02, 0.46, 0.97);
+    z-index: 3;
 }
 
 
@@ -112,6 +113,7 @@ img {
     top: 0;
     left: 0;
     background: #ffffff;
+    z-index: 5;
 }
 
 .logo {
